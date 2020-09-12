@@ -5,7 +5,6 @@ public class OrdemServico {
     @Override
     public String toString() {
         return "OrdemServico{" +
-                "id='" + id + '\'' +
                 ", Nome='" + Nome + '\'' +
                 ", Data='" + Data + '\'' +
                 ", Nposte='" + Nposte + '\'' +
@@ -17,21 +16,49 @@ public class OrdemServico {
                 ", check2=" + check2 +
                 ", check3=" + check3 +
                 ", check4=" + check4 +
+                ", check5=" + check5 +
+                ", status=" + status +
                 '}';
     }
 
-    private String id;
     private String Nome;
     private String Data;
     private String Nposte;
     private String Rua;
     private String Bairro;
-    private int Numerocasa;
+    private String Numerocasa;
     private String Outro;
     private boolean check1;
     private boolean check2;
     private boolean check3;
     private boolean check4;
+    private boolean check5;
+    private String status;
+
+    public boolean isCheck5() {
+        return check5;
+    }
+
+    public void setCheck5(boolean check5) {
+        this.check5 = check5;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
+    public String getNumerocasa() {
+        return Numerocasa;
+    }
+
+    public void setNumerocasa(String numerocasa) {
+        Numerocasa = numerocasa;
+    }
 
     public String getBairro() {
         return Bairro;
@@ -41,13 +68,6 @@ public class OrdemServico {
         this.Bairro = bairro;
     }
 
-    public int getNumerocasa() {
-        return Numerocasa;
-    }
-
-    public void setNumerocasa(int numerocasa) {
-        this.Numerocasa = numerocasa;
-    }
 
     public String getOutro() {
         return Outro;
@@ -87,14 +107,6 @@ public class OrdemServico {
 
     public void setCheck4(boolean check4) {
         this.check4 = check4;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getNome() {
