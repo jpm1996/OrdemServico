@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "136486464908",
+    "firebase_url": "https://estagio-aa8d0.firebaseio.com",
+    "project_id": "estagio-aa8d0",
+    "storage_bucket": "estagio-aa8d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136486464908:android:d4b8a1c5d7bffec6cc7aa9",
+        "android_client_info": {
+          "package_name": "com.unidesk.estagio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136486464908-ps3prht6c3o31e1im224nqrer2jfb19e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unidesk.estagio",
+            "certificate_hash": "acb1392ebd39e817844eae2292650f8ba34ca896"
+          }
+        },
+        {
+          "client_id": "136486464908-jn9unah7genk58sbgbl59k7hdn7f8oab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrYDcd9ISHDnqoiQZ000Hd2H1VoVGB8p8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136486464908-jn9unah7genk58sbgbl59k7hdn7f8oab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

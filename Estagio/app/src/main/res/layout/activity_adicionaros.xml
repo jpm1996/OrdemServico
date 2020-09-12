@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity.Adicionaros">
+
+    <EditText
+        android:id="@+id/adicionaros_nome"
+        android:layout_width="318dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Nome"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/adicionaros_data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/adicionaros_data"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginBottom="103dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:hint="Data"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+
+
+        app:layout_constraintBottom_toTopOf="@+id/adicionaros_rua"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.583" />
+
+    <EditText
+        android:id="@+id/adicionaros_nposte"
+        android:layout_width="128dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:hint="Nº do poste"
+        android:inputType="number"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/adicionaros_rua"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adicionaros_data"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/adicionaros_rua"
+        android:layout_width="330dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:hint="Rua"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/adicionaros_checkBox1"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/background_caixatexto"
+        android:text="Luz apagada durante a noite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adicionaros_rua" />
+
+    <CheckBox
+        android:id="@+id/adicionaros_checkBox2"
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_caixatexto"
+        android:text="Luz acesa durante o dia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adicionaros_checkBox1" />
+
+    <CheckBox
+        android:id="@+id/adicionaros_checkBox3"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_caixatexto"
+        android:text="Luz apaga e acende"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adicionaros_checkBox2" />
+
+    <CheckBox
+        android:id="@+id/adicionaros_checkBox4"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_caixatexto"
+        android:text="Fio partido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adicionaros_checkBox3" />
+
+    <EditText
+        android:id="@+id/adicionaros_outro"
+        android:layout_width="364dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Outro:"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/adicionaros_cancelar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/adicionaros_adicionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/background_botao"
+        android:onClick="adicionar"
+        android:text="Adicionar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/adicionaros_cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/background_botao"
+        android:onClick="cancelar"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/adicionaros_bairro"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:hint="Bairro"
+        android:inputType="textPersonName"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/adicionaros_checkBox1"
+        app:layout_constraintEnd_toStartOf="@+id/adicionaros_numerocasa"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adicionaros_rua" />
+
+    <EditText
+        android:id="@+id/adicionaros_numerocasa"
+        android:layout_width="146dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/background_caixatexto"
+        android:ems="10"
+        android:hint="Numero"
+        android:inputType="number"
+        android:paddingLeft="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="303dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
