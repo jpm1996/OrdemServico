@@ -23,8 +23,6 @@ public class Adicionaros extends AppCompatActivity {
 
     private OrdemServico ordemservico;
 
-    private String status;
-
     FirebaseFirestore db=FirebaseFirestore.getInstance();
 
 
@@ -39,7 +37,6 @@ public class Adicionaros extends AppCompatActivity {
         botaoAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Log.i("salve", "clicou");
 
                 String textoNome = campoNome.getText().toString();
                 String textoData = campoData.getText().toString();
@@ -76,6 +73,8 @@ public class Adicionaros extends AppCompatActivity {
                                             ordemservico.setCheck5(marcaCheck5);
                                             ordemservico.setOutro(textoOutro);
                                             ordemservico.setStatus("Aberta");
+                                            ordemservico.setSolucao("");
+                                            ordemservico.setDataFechamento("");
                                             adicionar(ordemservico);
                                             Intent i = new Intent( Adicionaros.this, Lista.class);
                                             startActivity( i );

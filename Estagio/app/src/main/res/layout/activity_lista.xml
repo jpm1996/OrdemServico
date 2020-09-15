@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,38 +7,49 @@
     android:background="@drawable/background"
     tools:context=".activity.Lista">
 
-    <Button
-        android:id="@+id/lista_sair"
-        android:layout_width="118dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:background="@drawable/background_botao"
-        android:onClick="sair"
-        android:text="Sair"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/lista_adicionar"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
 
-    <Button
-        android:id="@+id/lista_adicionar"
-        android:layout_width="118dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/background_botao"
-        android:onClick="adicionar"
-        android:text="Adicionar Ordem de Serviço"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        <ListView
+            android:id="@+id/lista_Listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/button"
+            android:layout_alignParentTop="true"
+            android:divider="@null">
 
-    <ListView
-        android:id="@+id/lista_Listview"
-        android:layout_width="409dp"
-        android:layout_height="628dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/lista_sair"
+                android:layout_width="118dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="80dp"
+                android:layout_gravity="left"
+                android:background="@drawable/background_botao"
+                android:onClick="sair"
+                android:text="Sair"/>
+
+            <Button
+                android:id="@+id/lista_adicionar"
+                android:layout_width="118dp"
+                android:layout_height="60dp"
+                android:layout_gravity="right"
+                android:background="@drawable/background_botao"
+                android:onClick="adicionar"
+                android:text="Adicionar Ordem de Serviço"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+
+
+
+</RelativeLayout>

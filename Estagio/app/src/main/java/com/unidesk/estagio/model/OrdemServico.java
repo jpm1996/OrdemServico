@@ -4,21 +4,43 @@ package com.unidesk.estagio.model;
 public class OrdemServico {
     @Override
     public String toString() {
-        return "OrdemServico{" +
-                ", Nome='" + Nome + '\'' +
-                ", Data='" + Data + '\'' +
-                ", Nposte='" + Nposte + '\'' +
-                ", Rua='" + Rua + '\'' +
-                ", Bairro='" + Bairro + '\'' +
-                ", Numerocasa='" + Numerocasa + '\'' +
-                ", Outro='" + Outro + '\'' +
-                ", check1=" + check1 +
-                ", check2=" + check2 +
-                ", check3=" + check3 +
-                ", check4=" + check4 +
-                ", check5=" + check5 +
-                ", status=" + status +
-                '}';
+        if (solucao.toString() == "") {
+            return ""+ '\n' +
+                    "Ordem de Servico:" + '\n' +
+                    ". Nome= " + Nome + '\n' +
+                    ". Data= " + Data + '\n' +
+                    ". Nposte= " + Nposte + '\n' +
+                    ". Rua= " + Rua + '\n' +
+                    ". Bairro= " + Bairro + '\n' +
+                    ". Numerocasa= " + Numerocasa + '\n' +
+                    ". Outro= " + Outro + '\n' +
+                    ". check1=" + check1 +
+                    ", check2=" + check2 +
+                    ", check3=" + check3 +
+                    ", check4=" + check4 +
+                    ", check5=" + check5 + '\n' +
+                    ". Status=" + status + '\n' ;
+
+        } else {
+            return "" + '\n' +
+                    "Ordem de Servico:" + '\n' +
+                    ". Nome= " + Nome + '\n' +
+                    ". Data= " + Data + '\n' +
+                    ". Nposte= " + Nposte + '\n' +
+                    ". Rua= " + Rua + '\n' +
+                    ". Bairro= " + Bairro + '\n' +
+                    ". Numerocasa= " + Numerocasa + '\n' +
+                    ". Outro= " + Outro + '\n' +
+                    ". check1=" + check1 +
+                    ", check2=" + check2 +
+                    ", check3=" + check3 +
+                    ", check4=" + check4 +
+                    ", check5=" + check5 + '\n' +
+                    ". Status=" + status + '\n' +
+                    ". Solução=" + solucao+ '\n' +
+                    ".Data Fechamento=" + dataFechamento + '\n' ;
+        }
+
     }
 
     private String Nome;
@@ -34,6 +56,24 @@ public class OrdemServico {
     private boolean check4;
     private boolean check5;
     private String status;
+    private String solucao;
+    private String dataFechamento;
+
+    public String getDataFechamento() {
+        return dataFechamento;
+    }
+
+    public void setDataFechamento(String dataFechamento) {
+        this.dataFechamento = dataFechamento;
+    }
+
+    public String getSolucao() {
+        return solucao;
+    }
+
+    public void setSolucao(String solucao) {
+        this.solucao = solucao;
+    }
 
     public boolean isCheck5() {
         return check5;

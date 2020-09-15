@@ -1,13 +1,17 @@
 package com.unidesk.estagio.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,14 +19,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.unidesk.estagio.Informacaodialog.InformacaoDialog;
 import com.unidesk.estagio.model.OrdemServico;
 
 import java.util.ArrayList;
 
-//import com.unidesk.estagio.R;
+public class Lista extends AppCompatActivity implements View.OnClickListener{
 
-public class Lista extends AppCompatActivity {
-
+    private AlertDialog alert;
+    InformacaoDialog info;
+    private Context context;
 
     FirebaseFirestore db=FirebaseFirestore.getInstance();
 
@@ -52,6 +58,8 @@ public class Lista extends AppCompatActivity {
                         item.setBairro(document.getString("bairro"));
                         item.setNumerocasa(document.getString("numerocasa"));
                         item.setStatus(document.getString("status"));
+                        item.setSolucao(document.getString("solucao"));
+                        item.setDataFechamento(document.getString("dataFechamento"));
                         item.setOutro(document.getString("outro"));
                         item.setCheck1(document.getBoolean("check1"));
                         item.setCheck2(document.getBoolean("check2"));
@@ -69,23 +77,34 @@ public class Lista extends AppCompatActivity {
 
 
 
-        /*****************************************************/
-        /*String[] dados = new String[] { "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread",
-                "Honeycomb", "Ice Cream Sandwich", "Jelly Bean",
-                "KitKat", "Lollipop", "Marshmallow", "Nougat" };
-        ArrayAdapter<String> teste = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dados);
-        lista_Listview.setAdapter(teste);
-        teste.notifyDataSetChanged();*/
-        /***************************************************/
-
     }
 
     public void atualizarLista(){
-
         lista_Listview = (ListView) findViewById(com.unidesk.estagio.R.id.lista_Listview);
         adapterOS = new ArrayAdapter<OrdemServico>(this, android.R.layout.simple_list_item_1, listaordem);
         lista_Listview.setAdapter(adapterOS);
+        lista_Listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+              OrdemServico valorSelecionado = (OrdemServico) lista_Listview.getItemAtPosition(position);
+                if (valorSelecionado.getStatus().toString().equals("Fechada") ){
+                 Toast.makeText(getApplicationContext(), "Ordem de servico ja esta fechada!!", Toast.LENGTH_LONG) .show();
+             }
+                else{
+
+                    chamarAlert(valorSelecionado.getRua(), valorSelecionado.getNposte());
+                    adapterOS.notifyDataSetChanged();
+
+                }
+            }
+         });
+
         adapterOS.notifyDataSetChanged();
+    }
+
+    public void chamarAlert(String rua, String poste){
+        info = new InformacaoDialog(this, rua , poste);
+        info.show();
     }
 
     public void sair(android.view.View view){
@@ -97,4 +116,10 @@ public class Lista extends AppCompatActivity {
         Intent i = new Intent( Lista.this, Adicionaros.class);
         startActivity( i );
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
 }
